@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Login Page</title>
+</head>
+<body>
+
+<div class="login-page">
+  <div class="form">
+    <h2>LOGIN PAGE</h2>
+    <form action="/verify" method="post">
+     
+      <input name="email" type="email" placeholder="Email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" />
+      
+    
+      <input name="password" type="password" placeholder="Password" required minlength="6" />
+      
+      <button>Login</button>
+
+     
+      {{#if error}}
+        <p style="color:red">{{error}}</p>
+      {{/if}}
+      {{#if emailError}}
+        <p style="color:red">{{emailError}}</p>
+      {{/if}}
+      {{#if passwordError}}
+        <p style="color:red">{{passwordError}}</p>
+      {{/if}}
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
